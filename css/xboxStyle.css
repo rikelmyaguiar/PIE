@@ -1,0 +1,233 @@
+/* Estilo base do body */
+body {
+    background-image: radial-gradient(#168100, #000000);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px; /* Espaço para a navegação fixa */
+}
+
+/* Navegação fixada no topo */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #009921;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #5d5d5d;
+}
+
+/* Exibir o dropdown */
+.MenuNav li:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos da logo */
+.logo img {
+    height: 80px;
+}
+
+/* Estilo da lista de navegação */
+.MenuNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.MenuNav li a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    padding: 10px 40px;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.MenuNav li a:hover {
+    transform: scale(1.1); 
+}
+
+/* Adicionar espaçamento entre os links */
+.MenuNav li {
+    margin-left: 20px;
+}
+
+/* Título da página */
+h1 {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+/* Container para os cards de produtos */
+.conteiner {
+    /*background-color: chartreuse;*/
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 30px; 
+    margin: 20px auto;
+    max-width: 1290px; 
+}
+
+/* Estilo dos cards */
+.card {
+    width: 200px;
+    height: 330px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px;
+    background-color: #222;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.titulo-produto {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.preco {
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-right: 25px;
+}
+
+.foto-produto {
+    width: 180px;
+    height: 180px;
+    border: 2px solid #168100;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Efeito de hover nos cards */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo do botão */
+.botao-adicionar {
+    background-color: #168100;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+/* Efeito de hover no botão */
+.botao-adicionar:hover {
+    background-color: #168100;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+/* Estilo do footer */
+footer {
+    background-color: rgb(59, 59, 59);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.boxs {
+    flex: 1;
+    margin: 10px;
+    padding-left: 30px;
+}
+
+.boxs h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.boxs p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.boxs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.boxs ul li {
+    margin: 10px 0;
+}
+
+.boxs ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.boxs ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .MenuNav {
+        flex-direction: column;
+        display: none;
+    }
+
+    .MenuNav.active {
+        display: flex;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
